@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ferretería Emanuel</title>
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Ferretería Emanuel</h1>
+<nav>
+  <a href="index.html">Inicio</a>
+  <a href="herramientas.html">Herramientas</a>
+  <a href="materiales.html">Materiales</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+    </nav>
+  </header>
+
+  <section id="ofertas" class="seccion-ofertas">
+    <h2>🔥 Ofertas de la Semana</h2>
+    <div class="productos">
+      <div class="producto oferta herramientas">
+        <img src="imagenes/martillo.jpg" alt="Martillo en oferta">
+        <h3>Martillo</h3>
+        <p><span class="precio-original">35 Bs</span> <strong>25 Bs</strong></p>
+      </div>
+      <div class="producto oferta herramientas">
+        <img src="imagenes/pala.jpg" alt="Pala en oferta">
+        <h3>Pala</h3>
+        <p><span class="precio-original">60 Bs</span> <strong>50 Bs</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="buscador-container">
+  <input type="text" id="buscador" placeholder="Buscar productos..." oninput="filtrarProductos()" />
+</div>
+
+  <main>
+    <h2 id="productos" style="text-align:center; color:#e65100;">🧱 Nuestros productos</h2>
+
+<div class="productos">
+  <!-- Herramientas existentes con botones ya agregados -->
+  <div class="producto herramientas" data-info="Martillo de acero forjado, ideal para clavos y carpintería.">
+    <img src="imagenes/martillo.jpg" alt="Martillo">
+    <h3>Martillo</h3>
+    <p>Precio: 25 Bs</p>
+    <button onclick="agregarAlCarrito('Martillo', 25, 'imagenes/martillo.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/carretilla.jpg" alt="Carretilla">
+    <h3>Carretilla</h3>
+    <p>Precio: 180 Bs</p>
+    <button onclick="agregarAlCarrito('Carretilla', 180, 'imagenes/carretilla.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/pala.jpg" alt="Pala">
+    <h3>Pala</h3>
+    <p>Precio: 50 Bs</p>
+    <button onclick="agregarAlCarrito('Pala', 50, 'imagenes/pala.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/picota.jpg" alt="Picota">
+    <h3>Picota</h3>
+    <p>Precio: 70 Bs</p>
+    <button onclick="agregarAlCarrito('Picota', 70, 'imagenes/picota.jpg')">Agregar al carrito</button>
+  </div>
+
+  <!-- Herramientas nuevas con botón añadido -->
+  <div class="producto herramientas">
+    <img src="imagenes/destornillador.jpg" alt="Destornillador">
+    <h3>Destornillador</h3>
+    <p>Precio: 15 Bs</p>
+    <button onclick="agregarAlCarrito('Destornillador', 15, 'imagenes/destornillador.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/alicate.jpg" alt="Alicate">
+    <h3>Alicate</h3>
+    <p>Precio: 30 Bs</p>
+    <button onclick="agregarAlCarrito('Alicate', 30, 'imagenes/alicate.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/llaveinglesa.jpg" alt="Llave inglesa">
+    <h3>Llave inglesa</h3>
+    <p>Precio: 30 Bs</p>
+    <button onclick="agregarAlCarrito('Llave inglesa', 30, 'imagenes/llaveinglesa.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/segueta.jpg" alt="Segueta">
+    <h3>Segueta</h3>
+    <p>Precio: 35 Bs</p>
+    <button onclick="agregarAlCarrito('Segueta', 35, 'imagenes/segueta.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/taladro.jpg" alt="Taladro">
+    <h3>Taladro</h3>
+    <p>Precio: 450 Bs</p>
+    <button onclick="agregarAlCarrito('Taladro', 450, 'imagenes/taladro.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/cintametrica.jpg" alt="Cinta métrica">
+    <h3>Cinta métrica</h3>
+    <p>Precio: 25 Bs</p>
+    <button onclick="agregarAlCarrito('Cinta métrica', 25, 'imagenes/cintametrica.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/serrucho.jpg" alt="Serrucho">
+    <h3>Serrucho</h3>
+    <p>Precio: 40 Bs</p>
+    <button onclick="agregarAlCarrito('Serrucho', 40, 'imagenes/serrucho.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/escuadra.jpg" alt="Escuadra metálica">
+    <h3>Escuadra</h3>
+    <p>Precio: 30 Bs</p>
+    <button onclick="agregarAlCarrito('Escuadra', 30, 'imagenes/escuadra.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/nivel.jpg" alt="Nivel de mano">
+    <h3>Nivel</h3>
+    <p>Precio: 60 Bs</p>
+    <button onclick="agregarAlCarrito('Nivel', 60, 'imagenes/nivel.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/estilete.jpg" alt="Estilete">
+    <h3>Estilete</h3>
+    <p>Precio: 20 Bs</p>
+    <button onclick="agregarAlCarrito('Estilete', 20, 'imagenes/estilete.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/juegodellaves.jpg" alt="Juego de llaves">
+    <h3>juegodellaves</h3>
+    <p>Precio: 200 Bs</p>
+    <button onclick="agregarAlCarrito('Juego de llaves', 200, 'imagenes/juegodellaves.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/rastrillo.jpg" alt="Rastrillo">
+    <h3>Rastrillo</h3>
+    <p>Precio: 50 Bs</p>
+    <button onclick="agregarAlCarrito('Rastrillo', 50, 'imagenes/rastrillo.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/sincel.jpg" alt="Sincel">
+    <h3>Sincel</h3>
+    <p>Precio: 30 Bs</p>
+    <button onclick="agregarAlCarrito('Sincel', 30, 'imagenes/sincel.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto herramientas">
+    <img src="imagenes/combo.jpg" alt="Combo">
+    <h3>Combo</h3>
+    <p>Precio: 40 Bs</p>
+    <button onclick="agregarAlCarrito('Combo', 40, 'imagenes/combo.jpg')">Agregar al carrito</button>
+  </div>
+
+  <!-- MATERIALES -->
+  <div class="producto materiales">
+    <img src="imagenes/cemento.jpg" alt="Cemento">
+    <h3>Cemento</h3>
+    <p>Precio: 65 Bs</p>
+    <button onclick="agregarAlCarrito('Cemento', 65, 'imagenes/cemento.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/ladrillo.jpg" alt="Ladrillo">
+    <h3>Ladrillo (unidad)</h3>
+    <p>Precio: 1.50 Bs</p>
+    <button onclick="agregarAlCarrito('Ladrillo', 1.5, 'imagenes/ladrillo.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/arena.jpg" alt="Arena">
+    <h3>Metro cúbico de arena</h3>
+    <p>Precio: 70 Bs</p>
+    <button onclick="agregarAlCarrito('Arena', 70, 'imagenes/arena.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/piedra.jpg" alt="Grava">
+    <h3>Metro cúbico de grava</h3>
+    <p>Precio: 85 Bs</p>
+    <button onclick="agregarAlCarrito('Grava', 85, 'imagenes/piedra.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/clavos.jpg" alt="Clavos">
+    <h3>Bolsa de clavos</h3>
+    <p>Precio: 20 Bs</p>
+    <button onclick="agregarAlCarrito('Clavos', 20, 'imagenes/clavos.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/cal.jpg" alt="Cal">
+    <h3>Saco de cal</h3>
+    <p>Precio: 55 Bs</p>
+    <button onclick="agregarAlCarrito('Cal', 55, 'imagenes/cal.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/malla.jpg" alt="Malla galvanizada">
+    <h3>Malla galvanizada</h3>
+    <p>Precio: 120 Bs</p>
+    <button onclick="agregarAlCarrito('Malla galvanizada', 120, 'imagenes/malla.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/yeso.jpg" alt="Yeso">
+    <h3>Saco de yeso</h3>
+    <p>Precio: 45 Bs</p>
+    <button onclick="agregarAlCarrito('Yeso', 45, 'imagenes/yeso.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/tubopvc.jpg" alt="Tubo PVC 4''">
+    <h3>Tubo PVC 4"</h3>
+    <p>Precio: 35 Bs</p>
+    <button onclick="agregarAlCarrito('Tubo PVC', 35, 'imagenes/tubopvc.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/cementocola.jpg" alt="Cemento cola">
+    <h3>Cemento cola</h3>
+    <p>Precio: 30 Bs</p>
+    <button onclick="agregarAlCarrito('Cemento cola', 30, 'imagenes/cementocola.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/fierro.jpg" alt="Varilla de fierro">
+    <h3>Varilla de fierro 1/4"</h3>
+    <p>Precio: 43 Bs</p>
+    <button onclick="agregarAlCarrito('Varilla de fierro', 43, 'imagenes/fierro.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/teja.jpg" alt="Teja">
+    <h3>Teja colonial</h3>
+    <p>Precio: 6 Bs</p>
+    <button onclick="agregarAlCarrito('Teja colonial', 6, 'imagenes/teja.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/zika.jpg" alt="Balde de sika">
+    <h3>Balde de sika impermeabilizante 18L</h3>
+    <p>Precio: 140 Bs</p>
+    <button onclick="agregarAlCarrito('Balde de sika', 140, 'imagenes/zika.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/pintura.jpg" alt="Pintura latex">
+    <h3>Pintura látex blanca 18L</h3>
+    <p>Precio: 180 Bs</p>
+    <button onclick="agregarAlCarrito('Pintura látex blanca', 180, 'imagenes/pintura.jpg')">Agregar al carrito</button>
+  </div>
+
+  <div class="producto materiales">
+    <img src="imagenes/silicona.jpg" alt="Silicona">
+    <h3>Silicona selladora</h3>
+    <p>Precio: 28 Bs</p>
+    <button onclick="agregarAlCarrito('Silicona selladora', 28, 'imagenes/silicona.jpg')">Agregar al carrito</button>
+  </div>
+  </div>
+  </main>
+
+  <!-- Botón para abrir carrito flotante -->
+  <button id="abrir-carrito" onclick="toggleCarrito()">🛒 Ver carrito</button>
+
+  <!-- Carrito flotante -->
+  <div id="popup-carrito" class="popup-carrito">
+    <h3>🛒 Tu carrito</h3>
+    <div id="carrito-items"></div>
+    <div class="carrito-total">Total: <span id="carrito-total">0 Bs</span></div>
+    <div class="carrito-botones">
+      <button onclick="vaciarCarrito()">🗑️ Vaciar</button>
+      <button onclick="enviarWhatsApp()">📤 Enviar por WhatsApp</button>
+      <button onclick="toggleCarrito()">❌ Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Sección contacto -->
+  <section id="contacto" style="text-align:center; padding:20px;">
+    <h2>Contáctanos</h2>
+    <p>¿Tienes alguna pregunta? Escríbenos directamente por WhatsApp:</p>
+    <a href="https://wa.me/59178572424" target="_blank">
+      <button style="background-color:#25D366; color:white; border:none; padding:10px 20px; font-size:16px;">
+        📱 Chatear por WhatsApp
+      </button>
+    </a>
+  </section>
+
+  <section id="sobre-nosotros" class="seccion-nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>Somos <strong>Ferretería Emanuel</strong>, una empresa local con pasión por la construcción. Ofrecemos herramientas y materiales de calidad al mejor precio. Nos ubicamos en [tu zona/localidad].</p>
+    <p>Contáctanos para pedidos especiales o ayuda personalizada.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ferretería Emanuel</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
